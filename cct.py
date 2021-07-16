@@ -45,8 +45,20 @@ VCCT = { ';': VDEC_SS,
          '0': VINC_SC,
          '1': VINC_DC}
 
+def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
+    title = title or 'Untitled'
+    output = [f'# {title}']
+    if description:
+        for line in description.split('\n'):
+            output.append(f'> {line}')
+    output += [f'1. {DEFAULT_ROW1}', f'2. {STD}']
+    for i, s in enumerate(program):
+        output.append('%s. %s' % (2 * i + 3, CCT[s]))
+        output.append('%s. %s' % (2 * i + 4, STD))
+    output.append('Repeat from 3.')
+    return '\n'.join(output)
 
-def ct_to_cct(program, data=DEFAULT_ROW1, verbose=False):
+def orig_ct_to_cct(program, data=DEFAULT_ROW1, verbose=False):
     if verbose:
         std, cct = VSTD, VCCT
     else:
@@ -158,7 +170,12 @@ def test_stuff():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=ABOUT, formatter_class=argparse.RawTextHelpFormatter)
     #parser.add_argument('file', help='source file to process')
-    parser.add_argument('--svg', '-s', help='SVG output to STDOUT', action='store_true')
+    parser.add_argument('--svg', '-s', help='Pattern symbol instructions as SVG to STDOUT', action='store_true')
+    parser.add_argument('--title', '-t', help='Title')
+    parser.add_argument('--describe', help='Description')
+    parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
+    parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
+    parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
     parser.add_argument('--debug', '-d', help='turn on debug output', action='store_true')
     args = parser.parse_args()
 
@@ -168,7 +185,16 @@ if __name__ == '__main__':
 
     PAGEY_OFFSET = 1080
     PAGEX_OFFSET = 770
-    if not args.svg:
+
+    if args.ct:
+        source = ct_to_cct(args.ct, title=args.title, description=args.describe)
+    elif args.bct:
+        source = ct_to_cct(bct_to_ct(args.bct), title=args.title, description=args.describe)
+
+    print(source)
+
+    if args.debug:
+        print()
         print('A:', a.crochet())
         print('CCT A:\n%s' % a.describe(True))
     for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
