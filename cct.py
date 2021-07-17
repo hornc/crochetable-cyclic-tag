@@ -11,21 +11,6 @@ Generates crochetable computational cyclic-tag patterns.
 """
 
 
-def bct_to_ct(s):
-    # takes a bct sequence of {0, 1} (str) and converts it to CT symbols {;, 0, 1}
-    s = s.replace(' ', '')
-    output = ''
-    l = len(s)
-    i = 0
-    while i < l:
-        if s[i] == '0':
-            output += ';'
-            i += 1
-        elif s[i] == '1':
-            output += s[i+1]
-            i += 2
-    return output
-
 DEFAULT_ROW1 = '[Any sequence of sc / dc stitched onto an appropriately sized foundation chain.]'
 
 STD    = "std"
@@ -47,6 +32,28 @@ VCCT = { STD:    VSTD,
          INC_SC: VINC_SC,
          INC_DC: VINC_DC}
 
+DC = 'Ŧ'
+SC = '+'
+SS = '.'
+CH = '⬭'
+CH = 'o'
+
+
+def bct_to_ct(s):
+    """Takes a bct sequence of {0, 1} (str) and converts it to CT symbols {;, 0, 1}."""
+    s = s.replace(' ', '')
+    output = ''
+    l = len(s)
+    i = 0
+    while i < l:
+        if s[i] == '0':
+            output += ';'
+            i += 1
+        elif s[i] == '1':
+            output += s[i+1]
+            i += 2
+    return output
+
 
 def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
     title = title or 'Untitled'
@@ -60,13 +67,6 @@ def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
         output.append('%s. %s' % (2 * i + 4, STD))
     output.append('Repeat from Row 3.')
     return '\n'.join(output)
-
-
-DC = 'Ŧ'
-SC = '+'
-SS = '.'
-CH = '⬭'
-CH = 'o'
 
 
 class CrochetableCT:
@@ -125,15 +125,13 @@ class CrochetableCT:
 
 
 def test_stuff():
+    # TODO: get rid of this
     collatz_base = "[1 dc 2 sc] n times."
     collatz = bct_to_ct("10 11 10 10 10 11 0 11 10 10 0 11 10 10 11 10 10 11 10 10 0 0 0 0")
     cb = (SC+SC+DC) * 7
     cz = CrochetableCT(cb, collatz)
-    
-    #print(ct_to_cct(collatz))
 
     #crochet((SC+SC+DC)*7, collatz)
-
 
     #crochet(DC*7 + SC*5, '0;1111;;000101;')
 
@@ -141,13 +139,9 @@ def test_stuff():
     #crochet(DC*5, '00;;;')
 
     a = CrochetableCT(DC*5, '00;;;')
-
     a = CrochetableCT(DC*55, '00;;;')
-
     a = CrochetableCT((SC+SC+DC)*7, '010001;100;100100100;;;;')
-
     a = CrochetableCT(''.join([SC, DC, DC, DC, SC, ]), '00;1;')  #   SC, SC, SS, DC, SS
-
     a = CrochetableCT(''.join([SC, DC, DC, SC, DC, DC, SC, ]), '0;;')
     #a = cz
     return a
@@ -156,10 +150,10 @@ def test_stuff():
 class Instructions:
     def __init__(self, source, data=None):
         self.source = source.split('\n')
-        self.data = data
+        self.data = data  # An explicit input first row, not just text instrutions
         self.title = None
         self.description = ''
-        self.first = None
+        self.first = None  # First row, likely text instructions, or default input instructions
         self.pattern = []
         for line in self.source:
             if line.startswith('#') and not self.title:
@@ -176,7 +170,6 @@ class Instructions:
 
     def verbose(self):
         verbose = self.raw()
-        #verbose = re.sub(r'^([0-9]+)\. (.*)$', r'Row \1: \2', verbose)
         verbose = re.sub(r'\n([0-9]+)\.', r'\n**Row \1**', verbose)
         for k in VCCT.keys():
             verbose = verbose.replace(k, VCCT[k])
@@ -194,16 +187,9 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
-    parser.add_argument('--verbose', '-v', help='Verbose instruction output', action='store_true')
+    parser.add_argument('--verbose', '-v', help='Verbose instruction output (Markdown)', action='store_true')
     parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
-
-    a = test_stuff()
-    output = ''
-    smap = {DC: 'double', SC: 'single', SS: 'slipstitch', CH: 'chain'}
-
-    PAGEY_OFFSET = 1080
-    PAGEX_OFFSET = 770
 
     kwargs = {}
     if args.title:
@@ -234,10 +220,16 @@ if __name__ == '__main__':
         print(cct.raw())
         print('VERBOSE:', cct.verbose())
 
+    a = test_stuff()
+    if args.debug:
         """
         print()
         print('A:', a.crochet())
         print('CCT A:\n%s' % a.describe(True))"""
+    output = ''
+    smap = {DC: 'double', SC: 'single', SS: 'slipstitch', CH: 'chain'}
+    PAGEY_OFFSET = 1080
+    PAGEX_OFFSET = 770
 
     for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
     #for y, row in enumerate(a.piece):
