@@ -51,7 +51,7 @@ def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
     if description:
         for line in description.split('\n'):
             output.append(f'> {line}')
-    output += [f'1. {DEFAULT_ROW1}', f'2. {STD}']
+    output += [f'1. {data}', f'2. {STD}']
     for i, s in enumerate(program):
         output.append('%s. %s' % (2 * i + 3, CCT[s]))
         output.append('%s. %s' % (2 * i + 4, STD))
@@ -169,7 +169,7 @@ def test_stuff():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=ABOUT, formatter_class=argparse.RawTextHelpFormatter)
-    #parser.add_argument('file', help='source file to process')
+    parser.add_argument('infile', help='CCT source file to process', nargs='?', type=argparse.FileType('r'))
     parser.add_argument('--svg', '-s', help='Pattern symbol instructions as SVG to STDOUT', action='store_true')
     parser.add_argument('--title', '-t', help='Title')
     parser.add_argument('--describe', help='Description')
@@ -186,11 +186,20 @@ if __name__ == '__main__':
     PAGEY_OFFSET = 1080
     PAGEX_OFFSET = 770
 
+    kwargs = {}
+    if args.title:
+        kwargs['title'] = args.title
+    if args.describe:
+        kwargs['description'] = args.describe
+    if args.input:
+        kwargs['data'] = args.input
     if args.ct:
-        source = ct_to_cct(args.ct, title=args.title, description=args.describe)
+        source = ct_to_cct(args.ct, **kwargs)
     elif args.bct:
-        source = ct_to_cct(bct_to_ct(args.bct), title=args.title, description=args.describe)
+        source = ct_to_cct(bct_to_ct(args.bct), **kwargs)
 
+    if args.infile:
+        source = args.infile.read()
     print(source)
 
     if args.debug:
