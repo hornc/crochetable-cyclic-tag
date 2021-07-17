@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import argparse
+import re
 from crochetdiagram import SVG_BASE, Symbol
-from string import ascii_lowercase as letters
+
 
 version = '0.0.1α'
 ABOUT = f"""
@@ -32,18 +33,20 @@ DEC_SS = "dec-ss"
 INC_SC = "inc-sc"
 INC_DC = "inc-dc"
 
-VSTD    = "std: work 1 sc into each dc, 1 dc into each sc until end of row; turn."
-VDEC_SS = "dec-ss: 1 ss, then proceed as in the standard row until end of row; turn." 
-VINC_SC = "inc-sc: prepare to proceed as in the std row, if the first st would be sc, skip this and the following std row. Otherwise, 1st st is dc: proceed as std row until end of row, then inc 1 extra sc into last st; turn."
-VINC_DC = "inc-dc: prepare to proceed as in the std row, if the first st would be sc, skip this and the following std row. Otherwise, 1st st is dc: proceed as std row until end of row, then inc 1 extra dc into last st; turn."
+VSTD    = "(std) work 1 sc into each dc, 1 dc into each sc until end of row; turn."
+VDEC_SS = "(dec-ss) 1 ss, then proceed as in the standard row until end of row; turn."
+VINC_SC = "(inc-sc) prepare to proceed as in the std row, if the first st would be sc, skip this and the following std row. Otherwise 1st st is dc: proceed as std row until end of row, then inc 1 extra sc into last st; turn."
+VINC_DC = "(inc-dc) prepare to proceed as in the std row, if the first st would be sc, skip this and the following std row. Otherwise 1st st is dc: proceed as std row until end of row, then inc 1 extra dc into last st; turn."
 
 CCT = { ';': DEC_SS,
         '0': INC_SC,
         '1': INC_DC}
 
-VCCT = { ';': VDEC_SS,
-         '0': VINC_SC,
-         '1': VINC_DC}
+VCCT = { STD:    VSTD,
+         DEC_SS: VDEC_SS,
+         INC_SC: VINC_SC,
+         INC_DC: VINC_DC}
+
 
 def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
     title = title or 'Untitled'
@@ -55,25 +58,8 @@ def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
     for i, s in enumerate(program):
         output.append('%s. %s' % (2 * i + 3, CCT[s]))
         output.append('%s. %s' % (2 * i + 4, STD))
-    output.append('Repeat from 3.')
+    output.append('Repeat from Row 3.')
     return '\n'.join(output)
-
-def orig_ct_to_cct(program, data=DEFAULT_ROW1, verbose=False):
-    if verbose:
-        std, cct = VSTD, VCCT
-    else:
-        std, cct = STD, CCT
-    output = 'Row 1: ' + data + '\n'
-    output += 'Row a: %s\n' % std 
-    for i in range(len(program)):
-        output += 'Row %s: %s\n' % (letters[(2 * i + 1) % 26], cct[program[i]])
-        output += 'Row %s: %s\n' % (letters[(2 * i + 2) % 26], std)
-    output += '   Repeat from instruction at Row a'
-    return output
-
-
-def cct_to_instructions(source):
-    return source
 
 
 DC = 'Ŧ'
@@ -167,6 +153,38 @@ def test_stuff():
     return a
 
 
+class Instructions:
+    def __init__(self, source, data=None):
+        self.source = source.split('\n')
+        self.data = data
+        self.title = None
+        self.description = ''
+        self.first = None
+        self.pattern = []
+        for line in self.source:
+            if line.startswith('#') and not self.title:
+                self.title = line[1:].strip()
+            elif line.startswith('>'):
+                self.description += line[1:]
+            elif not self.first:
+                self.first = line
+            else:
+                self.pattern.append(line)
+
+    def raw(self):
+        return '\n'.join(self.source)
+
+    def verbose(self):
+        verbose = self.raw()
+        #verbose = re.sub(r'^([0-9]+)\. (.*)$', r'Row \1: \2', verbose)
+        verbose = re.sub(r'\n([0-9]+)\.', r'\n**Row \1**', verbose)
+        for k in VCCT.keys():
+            verbose = verbose.replace(k, VCCT[k])
+        # Force line breaks in markdown
+        verbose = verbose.replace('\n', '  \n')
+        return verbose
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=ABOUT, formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('infile', help='CCT source file to process', nargs='?', type=argparse.FileType('r'))
@@ -176,7 +194,8 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
-    parser.add_argument('--debug', '-d', help='turn on debug output', action='store_true')
+    parser.add_argument('--verbose', '-v', help='Verbose instruction output', action='store_true')
+    parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
 
     a = test_stuff()
@@ -200,12 +219,26 @@ if __name__ == '__main__':
 
     if args.infile:
         source = args.infile.read()
-    print(source)
+
+    cct = Instructions(source, data=args.input)
+    if args.verbose:
+        print(cct.verbose())
+    elif not args.svg:
+        print(cct.raw())
 
     if args.debug:
+        print('TITLE:', cct.title)
+        print('FIRST:', cct.first)
+        print(cct.source)
+        print(cct.pattern)
+        print(cct.raw())
+        print('VERBOSE:', cct.verbose())
+
+        """
         print()
         print('A:', a.crochet())
-        print('CCT A:\n%s' % a.describe(True))
+        print('CCT A:\n%s' % a.describe(True))"""
+
     for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
     #for y, row in enumerate(a.piece):
         for x, sym in enumerate(row):
