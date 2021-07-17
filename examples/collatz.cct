@@ -1,0 +1,56 @@
+# Collatz Sequence
+> Converted from the CT program:
+> 010001;100;100100100;;;;
+> taken from https://esolangs.org/wiki/Bitwise_Cyclic_Tag#Example_.28Collatz_sequence.29
+
+1. [1 dc 2 sc] n times.
+2. std
+3. inc-sc
+4. std
+5. inc-dc
+6. std
+7. inc-sc
+8. std
+9. inc-sc
+10. std
+11. inc-sc
+12. std
+13. inc-dc
+14. std
+15. dec-ss
+16. std
+17. inc-dc
+18. std
+19. inc-sc
+20. std
+21. inc-sc
+22. std
+23. dec-ss
+24. std
+25. inc-dc
+26. std
+27. inc-sc
+28. std
+29. inc-sc
+30. std
+31. inc-dc
+32. std
+33. inc-sc
+34. std
+35. inc-sc
+36. std
+37. inc-dc
+38. std
+39. inc-sc
+40. std
+41. inc-sc
+42. std
+43. dec-ss
+44. std
+45. dec-ss
+46. std
+47. dec-ss
+48. std
+49. dec-ss
+50. std
+Repeat from Row 3.
