@@ -122,7 +122,7 @@ class CrochetableCT:
         self.piece = [CH * len(self.base_row), self.base_row, self.std(self.base_row)]
         instructions = {';': self.dec_ss, '0': self.inc_sc, '1': self.inc_dc}
         row = 0
-        while row < stop and (self.piece[-1].count(SC) + self.piece[-1].count(DC)) > 1:
+        while row < stop and self.piece[-1].strip():
             cmd = self.pattern[row % len(self.pattern)]
             #print("CMD: %d -- %s" % (row, cmd))
             new = instructions[cmd](self.piece[-1])
