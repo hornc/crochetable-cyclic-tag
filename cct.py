@@ -70,7 +70,7 @@ def ct_to_cct(program, data=DEFAULT_ROW1, title=None, description=None):
 
 
 class CrochetableCT:
-
+    LIMIT = 250
     def __init__(self, base_row, pattern):
         """
         base_row: str, made up of crochet stitch symbols.
@@ -82,8 +82,12 @@ class CrochetableCT:
         # pattern in CT
         self.pattern = pattern
         self.width = len(self.base_row)
-        self.crochet()
-        #print('\n'.join([row.rjust(self.width) for row in self.piece[::-1]]))
+
+    def evaluate(self, limit=LIMIT):
+        """Evaluate the instructions on base_row."""
+        self.crochet(limit)
+        last = min(limit, len(self.piece) - 1)
+        return '\n'.join([row.rjust(len(self.piece[last])) for row in self.piece[last::-1]])
 
     def std(self, s):
         tmp = '#'
@@ -105,13 +109,19 @@ class CrochetableCT:
         return s.strip().replace('8', '').replace('o', '')
 
     def describe(self, verbose=False):
+        """Describe the instructions."""
         return ct_to_cct(self.pattern, self.base_row, verbose)
 
-    def crochet(self):
+    def crochet(self, stop=LIMIT):
+        """
+        Evaluates the pattern from base_row.
+        Performed on init.
+        Populates self.piece
+        returns None
+        """
         self.piece = [CH * len(self.base_row), self.base_row, self.std(self.base_row)]
         instructions = {';': self.dec_ss, '0': self.inc_sc, '1': self.inc_dc}
         row = 0
-        stop = 520
         while row < stop and (self.piece[-1].count(SC) + self.piece[-1].count(DC)) > 1:
             cmd = self.pattern[row % len(self.pattern)]
             #print("CMD: %d -- %s" % (row, cmd))
@@ -143,7 +153,7 @@ def test_stuff():
     a = CrochetableCT((SC+SC+DC)*7, '010001;100;100100100;;;;')
     a = CrochetableCT(''.join([SC, DC, DC, DC, SC, ]), '00;1;')  #   SC, SC, SS, DC, SS
     a = CrochetableCT(''.join([SC, DC, DC, SC, DC, DC, SC, ]), '0;;')
-    #a = cz
+    a = cz
     return a
 
 
@@ -187,10 +197,13 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
+    parser.add_argument('--limit', help='Limit output evaluation to this many rows.', type=int)
     parser.add_argument('--verbose', '-v', help='Verbose instruction output (Markdown)', action='store_true')
     parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
 
+    a = None
+    source = None
     kwargs = {}
     if args.title:
         kwargs['title'] = args.title
@@ -200,44 +213,50 @@ if __name__ == '__main__':
         kwargs['data'] = args.input
     if args.ct:
         source = ct_to_cct(args.ct, **kwargs)
+        # Testing original class:
+        a = CrochetableCT(args.input or DC, args.ct)
     elif args.bct:
         source = ct_to_cct(bct_to_ct(args.bct), **kwargs)
 
     if args.infile:
         source = args.infile.read()
 
-    cct = Instructions(source, data=args.input)
-    if args.verbose:
-        print(cct.verbose())
-    elif not args.svg:
-        print(cct.raw())
+    if source:
+        cct = Instructions(source, data=args.input)
+        if args.verbose:
+            print(cct.verbose())
+        elif not args.svg:
+            print(cct.raw())
 
-    if args.debug:
-        print('TITLE:', cct.title)
-        print('FIRST:', cct.first)
-        print(cct.source)
-        print(cct.pattern)
-        print(cct.raw())
-        print('VERBOSE:', cct.verbose())
+        if args.debug:
+            print('TITLE:', cct.title)
+            print('FIRST:', cct.first)
+            print(cct.source)
+            print(cct.pattern)
+            print(cct.raw())
+            print('VERBOSE:', cct.verbose())
 
-    a = test_stuff()
+    if not a:
+        a = test_stuff()
     if args.debug:
-        """
-        print()
-        print('A:', a.crochet())
-        print('CCT A:\n%s' % a.describe(True))"""
+        print('CCT Instructions:\n%s' % a.describe(True))
+        print('Evaluated:')
+        print(a.evaluate(args.limit))
+
     output = ''
     smap = {DC: 'double', SC: 'single', SS: 'slipstitch', CH: 'chain'}
     PAGEY_OFFSET = 1080
     PAGEX_OFFSET = 770
 
-    for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
-    #for y, row in enumerate(a.piece):
-        for x, sym in enumerate(row):
-            if sym != ' ':
-                alt = y % 2
-                dh = sym == DC
-                offset = (1 - alt) * (-6.5 if dh else 6.5)
-                output += Symbol('%s_%s' % (x, y), smap[sym], (x * 10 - a.width * 10 + PAGEX_OFFSET, -y * 15 + offset + PAGEY_OFFSET), 0, alt).symbol
     if args.svg:
+        a.evaluate()
+        for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
+        #for y, row in enumerate(a.piece):
+            for x, sym in enumerate(row):
+                if sym != ' ':
+                    alt = y % 2
+                    dh = sym == DC
+                    offset = (1 - alt) * (-6.5 if dh else 6.5)
+                    output += Symbol('%s_%s' % (x, y), smap[sym], (x * 10 - a.width * 10 + PAGEX_OFFSET, -y * 15 + offset + PAGEY_OFFSET), 0, alt).symbol
+
         print(SVG_BASE.replace('{CONTENT}', output))
