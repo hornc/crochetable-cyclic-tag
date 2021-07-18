@@ -236,9 +236,8 @@ if __name__ == '__main__':
             print(cct.raw())
             print('VERBOSE:', cct.verbose())
 
-    if not a:
-        a = test_stuff()
-    if args.debug:
+    # a = test_stuff()
+    if a:
         print('CCT Instructions:\n%s' % a.describe(True))
         print('Evaluated:')
         print(a.evaluate(args.limit))
