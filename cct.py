@@ -214,7 +214,7 @@ if __name__ == '__main__':
     if args.ct:
         source = ct_to_cct(args.ct, **kwargs)
         # Testing original class:
-        a = CrochetableCT(args.input or DC, args.ct)
+        # a = CrochetableCT(args.input or DC, args.ct)
     elif args.bct:
         source = ct_to_cct(bct_to_ct(args.bct), **kwargs)
 
