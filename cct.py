@@ -183,7 +183,7 @@ class Instructions(CrochetableCT):
         row = 0
         pattern = self.pattern[2:]
         count = len(pattern)
-        while row < limit and piece[-1].strip():
+        while len(piece) < limit and piece[-1].strip():
             cmd = pattern[row % count].split(' ')[1]
             row += 1
             try:
@@ -195,11 +195,28 @@ class Instructions(CrochetableCT):
                 piece.append(new)
                 piece.append(self.std(piece[-1]))
                 width = max(width, len(piece[-1]))
-        print(self.show_piece(piece, limit=limit))
+        self.piece = piece
+        return self.piece
 
-    def show_piece(self, piece, limit=LIMIT):
-        last = min(limit, len(piece) - 1)
-        return '\n'.join([row.rjust(len(piece[last])) for row in piece[last::-1]])
+    def show_piece(self, limit=LIMIT):
+        last = min(limit, len(self.piece) -1)
+        return '\n'.join([row.rjust(len(self.piece[last])) for row in self.piece[last::-1]])
+
+    def svg_piece(self, limit=LIMIT):
+        smap = {DC: 'double', SC: 'single', SS: 'slipstitch', CH: 'chain'}
+        PAGEY_OFFSET = 1080
+        PAGEX_OFFSET = 770
+        last = min(limit, len(self.piece) -1)
+        width = len(self.piece[last])
+        output = ''
+        for y, row in enumerate([row.rjust(width) for row in self.piece]):
+            for x, sym in enumerate(row):
+                if sym != ' ':
+                    alt = y % 2
+                    dh = sym == DC
+                    offset = (1 - alt) * (-6.5 if dh else 6.5)
+                    output += Symbol('%s_%s' % (x, y), smap[sym], (x * 10 - width * 10 + PAGEX_OFFSET, -y * 15 + offset + PAGEY_OFFSET), 0, alt).symbol
+        return SVG_BASE.replace('{CONTENT}', output)
 
     def std(self, s):
         tmp = '#'
@@ -227,7 +244,7 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
-    parser.add_argument('--limit', '-l', help='Limit output evaluation to this many rows.', type=int, default=Instructions.LIMIT)
+    parser.add_argument('--limit', '-l', help='Limit output evaluation to this many output rows.', type=int, default=Instructions.LIMIT)
     parser.add_argument('--verbose', '-v', help='Verbose instruction output (Markdown)', action='store_true')
     parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
@@ -258,10 +275,13 @@ if __name__ == '__main__':
         elif not args.infile:
             print(cct.raw())
         elif args.svg:
-            print("TODO: Evaluate this to SVG -> STDOUT!")
+            # Evaluate to SVG -> STDOUT
+            cct.evaluate(args.input, limit=args.limit)
+            print(cct.svg_piece(limit=args.limit))
         else:
             # Evaluate to Unicode -> STDOUT
             cct.evaluate(args.input, limit=args.limit)
+            print(cct.show_piece(limit=args.limit))
         if args.debug:
             print('TITLE:', cct.title)
             print('FIRST:', cct.first)
@@ -275,21 +295,3 @@ if __name__ == '__main__':
         print('CCT Instructions:\n%s' % a.describe(True))
         print('Evaluated:')
         print(a.evaluate(args.limit))
-
-    output = ''
-    smap = {DC: 'double', SC: 'single', SS: 'slipstitch', CH: 'chain'}
-    PAGEY_OFFSET = 1080
-    PAGEX_OFFSET = 770
-
-    if args.svg:
-        a.evaluate()
-        for y, row in enumerate([row.rjust(a.width) for row in a.piece]):
-        #for y, row in enumerate(a.piece):
-            for x, sym in enumerate(row):
-                if sym != ' ':
-                    alt = y % 2
-                    dh = sym == DC
-                    offset = (1 - alt) * (-6.5 if dh else 6.5)
-                    output += Symbol('%s_%s' % (x, y), smap[sym], (x * 10 - a.width * 10 + PAGEX_OFFSET, -y * 15 + offset + PAGEY_OFFSET), 0, alt).symbol
-
-        print(SVG_BASE.replace('{CONTENT}', output))
