@@ -157,7 +157,8 @@ def test_stuff():
     return a
 
 
-class Instructions:
+class Instructions(CrochetableCT):
+    LIMIT = 250
     def __init__(self, source, data=None):
         self.source = source.split('\n')
         self.data = data  # An explicit input first row, not just text instrutions
@@ -174,6 +175,34 @@ class Instructions:
                 self.first = line
             else:
                 self.pattern.append(line)
+
+    def evaluate(self, data, limit=LIMIT):
+        data = data.replace('0', SC).replace('1', DC)
+        width = len(data)
+        piece = [CH * width, data, self.std(data)]
+        instructions = {'std': self.std, 'dec-ss': self.dec_ss, 'inc-sc': self.inc_sc, 'inc-dc': self.inc_dc}
+        row = 0
+        while row < limit and piece[-1].strip():
+            cmd = self.pattern[row % len(self.pattern)].split(' ')[-1]
+            row += 1
+            try:
+                new = instructions[cmd](piece[-1])
+            except KeyError as e:
+                continue
+            # don't add duplicate rows if there is no change
+            if len(self.core_stitches(self.std(new))) != len(self.core_stitches(piece[-1].strip())):
+                piece.append(new)
+                piece.append(self.std(piece[-1]))
+                width = max(width, len(piece[-1]))
+        print(self.show_piece(piece, limit=limit))
+
+    def show_piece(self, piece, limit=LIMIT):
+        last = min(limit, len(piece) - 1)
+        return '\n'.join([row.rjust(len(piece[last])) for row in piece[last::-1]])
+
+    def std(self, s):
+        tmp = '#'
+        return s.replace(DC, tmp).replace(SC, DC).replace(tmp, SC).replace(SS, ' ')
 
     def raw(self):
         return '\n'.join(self.source)
@@ -197,7 +226,7 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
-    parser.add_argument('--limit', help='Limit output evaluation to this many rows.', type=int)
+    parser.add_argument('--limit', '-l', help='Limit output evaluation to this many rows.', type=int, default=Instructions.LIMIT)
     parser.add_argument('--verbose', '-v', help='Verbose instruction output (Markdown)', action='store_true')
     parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
@@ -225,9 +254,13 @@ if __name__ == '__main__':
         cct = Instructions(source, data=args.input)
         if args.verbose:
             print(cct.verbose())
-        elif not args.svg:
+        elif not args.infile:
             print(cct.raw())
-
+        elif args.svg:
+            print("TODO: Evaluate this to SVG -> STDOUT!")
+        else:
+            # Evaluate to Unicode -> STDOUT
+            cct.evaluate(args.input, limit=args.limit)
         if args.debug:
             print('TITLE:', cct.title)
             print('FIRST:', cct.first)
