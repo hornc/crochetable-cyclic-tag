@@ -75,24 +75,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_1-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_1-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_1" transform="translate(710,1065.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_1-a"
-        />
+       id="1_1-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_1-b"
-       />
+       id="1_1-b" />
   </g>
 <g id="2_1"
    transform="translate(720,1065.0)">
@@ -102,11 +100,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_1-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_1-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="3_1"
@@ -117,11 +115,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_1-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_1-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="4_1"
@@ -132,24 +130,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_1-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_1-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="5_1" transform="translate(750,1065.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="5_1-a"
-        />
+       id="5_1-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="5_1-b"
-       />
+       id="5_1-b" />
   </g>
 <g id="6_1"
    transform="translate(760,1065.0)">
@@ -159,24 +155,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="6_1-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="6_1-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="0_2" transform="translate(700,1056.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_2-a"
-        />
+       id="0_2-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_2-b"
-       />
+       id="0_2-b" />
   </g>
 <g id="1_2"
    transform="translate(710,1043.5)">
@@ -186,48 +180,42 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_2-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_2-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="2_2" transform="translate(720,1056.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="2_2-a"
-        />
+       id="2_2-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="2_2-b"
-       />
+       id="2_2-b" />
   </g>
 <g id="3_2" transform="translate(730,1056.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="3_2-a"
-        />
+       id="3_2-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="3_2-b"
-       />
+       id="3_2-b" />
   </g>
 <g id="4_2" transform="translate(740,1056.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="4_2-a"
-        />
+       id="4_2-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="4_2-b"
-       />
+       id="4_2-b" />
   </g>
 <g id="5_2"
    transform="translate(750,1043.5)">
@@ -237,24 +225,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="5_2-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="5_2-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="6_2" transform="translate(760,1056.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="6_2-a"
-        />
+       id="6_2-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="6_2-b"
-       />
+       id="6_2-b" />
   </g>
 <g id="0_3"
    transform="translate(700,1035.0)">
@@ -264,24 +250,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_3-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_3-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_3" transform="translate(710,1035.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_3-a"
-        />
+       id="1_3-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_3-b"
-       />
+       id="1_3-b" />
   </g>
 <g id="2_3"
    transform="translate(720,1035.0)">
@@ -291,11 +275,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_3-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_3-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="3_3"
@@ -306,11 +290,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_3-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_3-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="4_3"
@@ -321,24 +305,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_3-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_3-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="5_3" transform="translate(750,1035.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="5_3-a"
-        />
+       id="5_3-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="5_3-b"
-       />
+       id="5_3-b" />
   </g>
 <g id="6_3" transform="translate(760,1035.0) scale(1.5)">
 <circle
@@ -351,13 +333,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_4-a"
-        />
+       id="0_4-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_4-b"
-       />
+       id="0_4-b" />
   </g>
 <g id="1_4"
    transform="translate(710,1013.5)">
@@ -367,48 +347,42 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_4-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_4-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="2_4" transform="translate(720,1026.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="2_4-a"
-        />
+       id="2_4-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="2_4-b"
-       />
+       id="2_4-b" />
   </g>
 <g id="3_4" transform="translate(730,1026.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="3_4-a"
-        />
+       id="3_4-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="3_4-b"
-       />
+       id="3_4-b" />
   </g>
 <g id="4_4" transform="translate(740,1026.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="4_4-a"
-        />
+       id="4_4-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="4_4-b"
-       />
+       id="4_4-b" />
   </g>
 <g id="5_4"
    transform="translate(750,1013.5)">
@@ -418,11 +392,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="5_4-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="5_4-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="0_5"
@@ -433,24 +407,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_5-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_5-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_5" transform="translate(710,1005.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_5-a"
-        />
+       id="1_5-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_5-b"
-       />
+       id="1_5-b" />
   </g>
 <g id="2_5"
    transform="translate(720,1005.0)">
@@ -460,11 +432,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_5-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_5-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="3_5"
@@ -475,11 +447,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_5-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_5-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="4_5"
@@ -490,11 +462,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_5-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="4_5-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="5_5" transform="translate(750,1005.0) scale(1.5)">
@@ -508,13 +480,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_6-a"
-        />
+       id="0_6-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_6-b"
-       />
+       id="0_6-b" />
   </g>
 <g id="1_6"
    transform="translate(710,983.5)">
@@ -524,48 +494,42 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_6-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_6-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="2_6" transform="translate(720,996.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="2_6-a"
-        />
+       id="2_6-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="2_6-b"
-       />
+       id="2_6-b" />
   </g>
 <g id="3_6" transform="translate(730,996.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="3_6-a"
-        />
+       id="3_6-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="3_6-b"
-       />
+       id="3_6-b" />
   </g>
 <g id="4_6" transform="translate(740,996.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="4_6-a"
-        />
+       id="4_6-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="4_6-b"
-       />
+       id="4_6-b" />
   </g>
 <g id="0_7"
    transform="translate(700,975.0)">
@@ -575,24 +539,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_7-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_7-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_7" transform="translate(710,975.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_7-a"
-        />
+       id="1_7-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_7-b"
-       />
+       id="1_7-b" />
   </g>
 <g id="2_7"
    transform="translate(720,975.0)">
@@ -602,11 +564,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_7-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_7-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="3_7"
@@ -617,11 +579,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_7-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="3_7-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="4_7" transform="translate(740,975.0) scale(1.5)">
@@ -635,13 +597,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_8-a"
-        />
+       id="0_8-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_8-b"
-       />
+       id="0_8-b" />
   </g>
 <g id="1_8"
    transform="translate(710,953.5)">
@@ -651,36 +611,32 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_8-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_8-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="2_8" transform="translate(720,966.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="2_8-a"
-        />
+       id="2_8-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="2_8-b"
-       />
+       id="2_8-b" />
   </g>
 <g id="3_8" transform="translate(730,966.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="3_8-a"
-        />
+       id="3_8-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="3_8-b"
-       />
+       id="3_8-b" />
   </g>
 <g id="0_9"
    transform="translate(700,945.0)">
@@ -690,24 +646,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_9-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_9-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_9" transform="translate(710,945.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_9-a"
-        />
+       id="1_9-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_9-b"
-       />
+       id="1_9-b" />
   </g>
 <g id="2_9"
    transform="translate(720,945.0)">
@@ -717,11 +671,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_9-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="2_9-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="3_9" transform="translate(730,945.0) scale(1.5)">
@@ -735,13 +689,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_10-a"
-        />
+       id="0_10-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_10-b"
-       />
+       id="0_10-b" />
   </g>
 <g id="1_10"
    transform="translate(710,923.5)">
@@ -751,24 +703,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_10-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_10-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="2_10" transform="translate(720,936.5)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="2_10-a"
-        />
+       id="2_10-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="2_10-b"
-       />
+       id="2_10-b" />
   </g>
 <g id="0_11"
    transform="translate(700,915.0)">
@@ -778,24 +728,22 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_11-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_11-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_11" transform="translate(710,915.0)">
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="1_11-a"
-        />
+       id="1_11-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="1_11-b"
-       />
+       id="1_11-b" />
   </g>
 <g id="2_11" transform="translate(720,915.0) scale(1.5)">
 <circle
@@ -808,13 +756,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_12-a"
-        />
+       id="0_12-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_12-b"
-       />
+       id="0_12-b" />
   </g>
 <g id="1_12"
    transform="translate(710,893.5)">
@@ -824,11 +770,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_12-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="1_12-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="0_13"
@@ -839,11 +785,11 @@
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_13-b"
-     d="M 0,7.000002 6,7"
+     d="M 0,7 6,7"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
   <path
      id="0_13-c"
-     d="M 0.401923,11.500002 5.59808,14.5"
+     d="M 0.4,11.5 5.6,14.5"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1" />
 </g>
 <g id="1_13" transform="translate(710,885.0) scale(1.5)">
@@ -857,13 +803,11 @@
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="M 0,9 6,9"
-       id="0_14-a"
-        />
+       id="0_14-a" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a8a8a8;stroke-width:0.8;stroke-opacity:1"
        d="m 3,6 v 6"
-       id="0_14-b"
-       />
+       id="0_14-b" />
   </g>
 <g id="0_15" transform="translate(700,855.0) scale(1.5)">
 <circle
