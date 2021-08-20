@@ -159,31 +159,32 @@ def test_stuff():
 
 class Instructions(CrochetableCT):
     LIMIT = 250
-    def __init__(self, source, data=None):
+    def __init__(self, source):
         self.source = source.split('\n')
-        self.data = data  # An explicit input first row, not just text instrutions
         self.title = None
         self.description = ''
-        self.first = None  # First row, likely text instructions, or default input instructions
         self.pattern = []
         for line in self.source:
+            line = line.strip()
+            if not line:
+                continue
             if line.startswith('#') and not self.title:
-                self.title = line[1:].strip()
+                self.title = line[1:]
             elif line.startswith('>'):
                 self.description += line[1:]
-            elif not self.first:
-                self.first = line
             else:
                 self.pattern.append(line)
 
     def evaluate(self, data, limit=LIMIT):
+        instructions = {'std': self.std, 'dec-ss': self.dec_ss, 'inc-sc': self.inc_sc, 'inc-dc': self.inc_dc}
         data = data.replace('0', SC).replace('1', DC)
         width = len(data)
         piece = [CH * width, data, self.std(data)]
-        instructions = {'std': self.std, 'dec-ss': self.dec_ss, 'inc-sc': self.inc_sc, 'inc-dc': self.inc_dc}
         row = 0
+        pattern = self.pattern[2:]
+        count = len(pattern)
         while row < limit and piece[-1].strip():
-            cmd = self.pattern[row % len(self.pattern)].split(' ')[-1]
+            cmd = pattern[row % count].split(' ')[1]
             row += 1
             try:
                 new = instructions[cmd](piece[-1])
@@ -251,7 +252,7 @@ if __name__ == '__main__':
         source = args.infile.read()
 
     if source:
-        cct = Instructions(source, data=args.input)
+        cct = Instructions(source)
         if args.verbose:
             print(cct.verbose())
         elif not args.infile:
