@@ -4,7 +4,7 @@ import re
 from crochetdiagram import SVG_BASE, Symbol
 
 
-version = '0.0.1α'
+version = '0.0.2α'
 ABOUT = f"""
 Crochetable Cyclic Tag (v.{version})
 Generates crochetable computational cyclic-tag patterns.
@@ -78,7 +78,6 @@ class CrochetableCT:
           https://esolangs.org/wiki/Bitwise_Cyclic_Tag#The_language_CT
         """
         self.base_row = base_row
-        #print('DEBUG:', base_row)
         # pattern in CT
         self.pattern = pattern
         self.width = len(self.base_row)
@@ -132,29 +131,6 @@ class CrochetableCT:
                 self.piece.append(self.std(self.piece[-1]))
                 self.width = max(self.width, len(self.piece[-1]))
             row += 1
-
-
-def test_stuff():
-    # TODO: get rid of this
-    collatz_base = "[1 dc 2 sc] n times."
-    collatz = bct_to_ct("10 11 10 10 10 11 0 11 10 10 0 11 10 10 11 10 10 11 10 10 0 0 0 0")
-    cb = (SC+SC+DC) * 7
-    cz = CrochetableCT(cb, collatz)
-
-    #crochet((SC+SC+DC)*7, collatz)
-
-    #crochet(DC*7 + SC*5, '0;1111;;000101;')
-
-    #crochet(DC*7 + SC*5, '0;')
-    #crochet(DC*5, '00;;;')
-
-    a = CrochetableCT(DC*5, '00;;;')
-    a = CrochetableCT(DC*55, '00;;;')
-    a = CrochetableCT((SC+SC+DC)*7, '010001;100;100100100;;;;')
-    a = CrochetableCT(''.join([SC, DC, DC, DC, SC, ]), '00;1;')  #   SC, SC, SS, DC, SS
-    a = CrochetableCT(''.join([SC, DC, DC, SC, DC, DC, SC, ]), '0;;')
-    a = cz
-    return a
 
 
 class Instructions(CrochetableCT):
@@ -249,7 +225,6 @@ if __name__ == '__main__':
     parser.add_argument('--debug', '-d', help='Turn on debug output', action='store_true')
     args = parser.parse_args()
 
-    a = None
     source = None
     kwargs = {}
     if args.title:
@@ -260,8 +235,6 @@ if __name__ == '__main__':
         kwargs['data'] = args.input
     if args.ct:
         source = ct_to_cct(args.ct, **kwargs)
-        # Testing original class:
-        # a = CrochetableCT(args.input or DC, args.ct)
     elif args.bct:
         source = ct_to_cct(bct_to_ct(args.bct), **kwargs)
 
@@ -284,14 +257,8 @@ if __name__ == '__main__':
             print(cct.show_piece(limit=args.limit))
         if args.debug:
             print('TITLE:', cct.title)
-            print('FIRST:', cct.first)
+            print('FIRST:', cct.pattern[0])
             print(cct.source)
             print(cct.pattern)
             print(cct.raw())
             print('VERBOSE:', cct.verbose())
-
-    # a = test_stuff()
-    if a:
-        print('CCT Instructions:\n%s' % a.describe(True))
-        print('Evaluated:')
-        print(a.evaluate(args.limit))
