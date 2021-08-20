@@ -18,6 +18,10 @@ Convert CT to CCT:
 
     ./cct.py --ct "010001;100;100100100;;;;" -t "Collatz Sequence"
 
+Convert CCT to human followable crochet instructions for computaion-by-crochet (`--verbose`):
+
+    ./cct.py examples/collatz.cct --verbose
+
 ### Evaluate
 Evaluate CCT to crochet pattern symbols (Unicode to STDOUT):
 
