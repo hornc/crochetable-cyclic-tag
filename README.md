@@ -31,3 +31,80 @@ Evaluate CCT to SVG crochet pattern:
 
     ./cct.py --svg examples/collatz.cct
 
+## Output example
+
+### CCT code
+[simple-triangle.cct](examples/simple-triangle.cct):
+
+```
+# Simple decreasing triangle swatch
+1. [Any sequence of sc / dc stitched onto an appropriately sized foundation chain.]
+2. std
+3. dec-ss
+4. std
+Repeat from Row 3.
+```
+Produced with `./cct.py --ct ";" --title "Simple decreasing triangle swatch"`
+
+### Verbose instructions
+
+    ./cct.py examples/simple-triangle.cct --verbose
+
+#### Simple decreasing triangle swatch  
+**Row 1** [Any sequence of sc / dc stitched onto an appropriately sized foundation chain.]  
+**Row 2** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.  
+**Row 3** (dec-ss) 1 ss, then proceed as in the standard row until end of row; turn.  
+**Row 4** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.  
+Repeat from Row 3. 
+
+### Evaluation of input
+`0`: single crochet, `1`: double crochet (US crochet terminology)
+
+
+    ./cct.py examples/simple-triangle.cct -i 111111
+
+```
+.     
++     
+Ŧ.    
+++    
+ŦŦ.   
++++   
+ŦŦŦ.  
+++++  
+ŦŦŦŦ. 
++++++ 
+ŦŦŦŦŦ.
+++++++
+ŦŦŦŦŦŦ
+ᴑᴑᴑᴑᴑᴑ
+```
+
+A different input produces different output:
+
+    ./cct.py examples/simple-triangle.cct -i 1011101
+
+```
+.      
++      
+Ŧ.     
++Ŧ     
+Ŧ+.    
++Ŧ+    
+Ŧ+Ŧ.   
++Ŧ++   
+Ŧ+ŦŦ.  
++Ŧ+++  
+Ŧ+ŦŦŦ. 
++Ŧ+++Ŧ 
+Ŧ+ŦŦŦ+.
++Ŧ+++Ŧ+
+Ŧ+ŦŦŦ+Ŧ
+ᴑᴑᴑᴑᴑᴑᴑ
+```
+
+### SVG output
+
+    ./cct.py examples/simple-triangle.cct -i 1011101 --svg
+
+![SVG example](examples/output/simple-triangle.svg)
