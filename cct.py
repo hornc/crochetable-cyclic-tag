@@ -34,10 +34,9 @@ VCCT = { STD:    VSTD,
 
 DC = 'Ŧ'
 SC = '+'
-SS = '.'
-CH = '⬭'
-CH = 'o'
+SS = '•'
 CH = 'ᴑ'  # U+1D11
+
 
 def bct_to_ct(s):
     """Takes a bct sequence of {0, 1} (str) and converts it to CT symbols {;, 0, 1}."""
