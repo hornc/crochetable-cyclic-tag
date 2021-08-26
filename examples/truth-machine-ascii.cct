@@ -11,14 +11,7 @@
 10. std
 11. inc-sc
 12. std
-13. inc-sc
-14. std
-15. inc-sc
-16. std
-17. inc-sc
-18. std
-19. inc-sc
-20. std
+13-22. [rep 11 and 12] 5 times
 21. inc-sc
 22. std
 23. inc-dc
@@ -51,12 +44,7 @@
 50. std
 51. inc-sc
 52. std
-53. inc-sc
-54. std
-55. inc-sc
-56. std
-57. inc-sc
-58. std
+53-58. [rep 51 and 52] 3 times
 59. inc-dc
 60. std
 61. inc-sc
@@ -71,16 +59,7 @@
 70. std
 71. inc-sc
 72. std
-73. inc-sc
-74. std
-75. inc-sc
-76. std
-77. inc-sc
-78. std
-79. inc-sc
-80. std
-81. inc-sc
-82. std
+73-82. [rep 72 and 72] 5 times
 83. inc-dc
 84. std
 85. inc-dc
@@ -101,16 +80,7 @@
 100. std
 101. inc-sc
 102. std
-103. inc-sc
-104. std
-105. inc-sc
-106. std
-107. inc-sc
-108. std
-109. inc-sc
-110. std
-111. inc-sc
-112. std
+103-112. [rep 101 and 102] 5 times
 113. inc-dc
 114. std
 115. inc-sc
@@ -129,24 +99,12 @@
 128. std
 129. inc-sc
 130. std
-131. inc-sc
-132. std
-133. inc-sc
-134. std
-135. inc-sc
-136. std
-137. inc-sc
-138. std
+131-138. [rep 129 and 130] 4 times
 139. inc-dc
 140. std
 141. inc-sc
 142. std
-143. inc-sc
-144. std
-145. inc-sc
-146. std
-147. inc-sc
-148. std
+143-148. [rep 141 and 142] 3 times
 149. inc-dc
 150. std
 151. inc-sc
@@ -161,16 +119,7 @@
 160. std
 161. inc-sc
 162. std
-163. inc-sc
-164. std
-165. inc-sc
-166. std
-167. inc-sc
-168. std
-169. inc-sc
-170. std
-171. inc-sc
-172. std
+163-172. [rep 161 and 162] 5 times
 173. inc-dc
 174. std
 175. inc-dc
