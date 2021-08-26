@@ -12,8 +12,6 @@
 11. inc-sc
 12. std
 13-22. [rep 11 and 12] 5 times
-21. inc-sc
-22. std
 23. inc-dc
 24. std
 25. inc-sc
