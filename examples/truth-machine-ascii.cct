@@ -18,46 +18,34 @@
 26. std
 27. inc-sc
 28. std
-29. inc-dc
-30. std
-31. inc-sc
-32. std
-33. inc-sc
-34. std
+29-34. [rep 23-28]
 35. inc-dc
 36. std
 37. inc-dc
 38. std
 39. inc-sc
 40. std
-41. inc-sc
-42. std
-43. inc-sc
-44. std
+41-44. [rep 39 and 40] 2 times
 45. inc-dc
 46. std
 47. inc-sc
 48. std
-49. inc-dc
-50. std
-51. inc-sc
-52. std
-53-58. [rep 51 and 52] 3 times
+49-52. [rep 45-48]
+53. inc-sc
+54. std
+55-58. [rep 53 and 54] 2 times
 59. inc-dc
 60. std
 61. inc-sc
 62. std
-63. inc-dc
-64. std
-65. inc-sc
-66. std
+63-66. [rep 59-62]
 67. inc-sc
 68. std
 69. inc-dc
 70. std
 71. inc-sc
 72. std
-73-82. [rep 72 and 72] 5 times
+73-82. [rep 71 and 72] 5 times
 83. inc-dc
 84. std
 85. inc-dc
@@ -72,10 +60,7 @@
 94. std
 95. inc-dc
 96. std
-97. dec-ss
-98. std
-99. inc-dc
-100. std
+97-100. [rep 93-96]
 101. inc-sc
 102. std
 103-112. [rep 101 and 102] 5 times
@@ -85,12 +70,7 @@
 116. std
 117. inc-sc
 118. std
-119. inc-dc
-120. std
-121. inc-sc
-122. std
-123. inc-sc
-124. std
+119-124. [rep 113-118]
 125. inc-dc
 126. std
 127. inc-dc
@@ -107,10 +87,7 @@
 150. std
 151. inc-sc
 152. std
-153. inc-dc
-154. std
-155. inc-sc
-156. std
+153-156. [rep 149-152]
 157. inc-sc
 158. std
 159. inc-dc
@@ -126,5 +103,5 @@
 178. std
 179. dec-ss
 180. std
-181 - 260. [Rep 179 and 180] 39 times
+181 - 260. [rep 179 and 180] 39 times
 Repeat from Row 3.
