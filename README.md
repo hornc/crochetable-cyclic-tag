@@ -38,7 +38,7 @@ Evaluate CCT to SVG crochet pattern:
 
 ```
 # Simple decreasing triangle swatch
-1. [Any sequence of sc / dc stitched onto an appropriately sized foundation chain.]
+1. Any sequence of sc / dc stitched onto an appropriately sized foundation chain.
 2. std
 3. dec-ss
 4. std
@@ -51,10 +51,10 @@ Produced with `./cct.py --ct ";" --title "Simple decreasing triangle swatch"`
     ./cct.py examples/simple-triangle.cct --verbose
 
 #### Simple decreasing triangle swatch  
-**Row 1** [Any sequence of sc / dc stitched onto an appropriately sized foundation chain.]  
-**Row 2** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.  
-**Row 3** (dec-ss) 1 ss, then proceed as in the standard row until end of row; turn.  
-**Row 4** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.  
+**Row 1** Any sequence of sc / dc stitched onto an appropriately sized foundation chain.
+**Row 2** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.
+**Row 3** (dec-ss) 1 ss, then proceed as in the standard row until end of row; turn.
+**Row 4** (std) work 1 sc into each dc, 1 dc into each sc until end of row; turn.
 Repeat from Row 3. 
 
 ### Evaluation of input
