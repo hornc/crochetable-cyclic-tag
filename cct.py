@@ -216,7 +216,7 @@ if __name__ == '__main__':
     parser.add_argument('--svg', '-s', help='Pattern symbol instructions as SVG to STDOUT', action='store_true')
     parser.add_argument('--title', '-t', help='Title')
     parser.add_argument('--describe', help='Description')
-    parser.add_argument('--input', '-i', help='Row 1 input (instructions or symbols)')
+    parser.add_argument('--input', '-i', help=f'Row 1 input (BCT instructions {{0, 1}}, or CCT symbols {{{SC}, {DC}}}). Default = {DC}', default=DC)
     parser.add_argument('--ct', help='Convert CT {0, 1, ;} source into CCT')
     parser.add_argument('--bct', help='Convert Bitwise Cyclic Tag {0, 1} source into CCT')
     parser.add_argument('--limit', '-l', help='Limit output evaluation to this many output rows.', type=int, default=Instructions.LIMIT)
