@@ -37,6 +37,13 @@ SC = '+'
 SS = '•'
 CH = 'ᴑ'  # U+1D11
 
+RE_NUMBERED = re.compile(r'^\d')
+RE_REPEAT = re.compile(r'^[R|r]ep(?:eat|\.)?\D*(\d+)\s*(?:and|-)\s*(\d+)')
+RE_REPEAT = re.compile(r'^(\d+)?\s*-?\s*(\d+)?\.?\s*\[?[R|r]ep(?:eat|\.)?\D*(\d+)\s*(?:and|-)\s*(\d+)')
+# captures:  (start)-(end). (repeat-start)-(repeat-end)
+RE_TIMES = re.compile(r'(\d+) times')
+RE_COMPLETE_PATTERN = re.compile(r'(pattern)')
+
 
 def bct_to_ct(s):
     """Takes a bct sequence of {0, 1} (str) and converts it to CT symbols {;, 0, 1}."""
@@ -133,7 +140,7 @@ class CrochetableCT:
 
 
 class Instructions(CrochetableCT):
-    LIMIT = 250
+    LIMIT = 512
     def __init__(self, source):
         self.source = source.split('\n')
         self.title = None
@@ -150,28 +157,74 @@ class Instructions(CrochetableCT):
             else:
                 self.pattern.append(line)
 
+    def get(self, n):
+        """Get instruction n."""
+        #TODO: this is horribly inefficient, index instructions for direct fetching...
+        for ins in self.pattern:
+            if ins.startswith(str(n)):
+                return ins
+
+    def halted(self, limit=LIMIT):
+        """ Returns whether halt condition has occurred, or LIMIT."""
+        return len(self.piece) > limit or not self.piece[-1].strip()
+
     def evaluate(self, data, limit=LIMIT):
-        instructions = {'std': self.std, 'dec-ss': self.dec_ss, 'inc-sc': self.inc_sc, 'inc-dc': self.inc_dc}
         data = data.replace('0', SC).replace('1', DC)
-        width = len(data)
-        piece = [CH * width, data, self.std(data)]
+        self.width = len(data)
+        self.piece = [CH * self.width, data, self.std(data)]
         row = 0
         pattern = self.pattern[2:]
         count = len(pattern)
-        while len(piece) < limit and piece[-1].strip():
-            cmd = pattern[row % count].split(' ')[1]
+        while not self.halted(limit):
+            current = pattern[row % count]
+            if RE_REPEAT.match(current):
+                print(f'REPEAT FOUND: {current}')
+                m = RE_REPEAT.match(current)
+                times = RE_TIMES.search(current)
+                if times:
+                    times = int(times.group(1))
+                else:
+                    times = None
+                complete = bool(RE_COMPLETE_PATTERN.search(current))
+                a, b, c, d = [int(v) if v else None for v in m.groups()]
+                print('GOT:', a, b, c, d, times, complete)
+                if not times and not complete:
+                    times = 1
+                if times:
+                    assert (d - c + 1) * times == b - a + 1, f'Expected {(d - c + 1) * times} to be {b - a + 1}.'
+                # We have a repeat block -- execute it until done.
+                repeats = 0
+                i = 0
+                block_length = d - c
+                while True:
+                    r_current = self.get(c + (i % block_length))
+                    cmd = r_current.split(' ')[1]
+                    self.perform(cmd)
+                    i += 1
+                    repeats += 1
+                    row += 1
+                    if self.halted(limit) or (times and repeats > times):
+                        break
+
+            elif RE_NUMBERED.match(current):
+                cmd = current.split(' ')[1]
+                self.perform(cmd)
+            else:
+                print(f'UNRECOGNISED COMMAND!: {current}')
             row += 1
-            try:
-                new = instructions[cmd](piece[-1])
-            except KeyError as e:
-                continue
-            # don't add duplicate rows if there is no change
-            if len(self.core_stitches(self.std(new))) != len(self.core_stitches(piece[-1].strip())):
-                piece.append(new)
-                piece.append(self.std(piece[-1]))
-                width = max(width, len(piece[-1]))
-        self.piece = piece
         return self.piece
+
+    def perform(self, cmd):
+        instructions = {'std': self.std, 'dec-ss': self.dec_ss, 'inc-sc': self.inc_sc, 'inc-dc': self.inc_dc}
+        try:
+            new = instructions[cmd](self.piece[-1])
+        except KeyError as e:
+            return
+        # don't add duplicate rows if there is no change
+        if len(self.core_stitches(self.std(new))) != len(self.core_stitches(self.piece[-1].strip())):
+            self.piece.append(new)
+            self.piece.append(self.std(self.piece[-1]))
+            self.width = max(self.width, len(self.piece[-1]))
 
     def show_piece(self, limit=LIMIT):
         last = min(limit, len(self.piece) -1)
